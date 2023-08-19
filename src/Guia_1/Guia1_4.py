@@ -5,14 +5,17 @@ más el doble producto del primero por el segundo más el cuadrado del segundo.
 
 """
 
+# Solicito el ingreso de los numeros
 a = float(input("Ingrese el primer numero"))
 b = float(input("Ingrese el segundo numero"))
 
-binomio_al_cuadrado = a**2 + 2*a*b + b**2
-esperado = (a + b)**2
+# Se reemplaza los valores en la funcion y se evalua
+esperado = a**2 + 2*a*b + b**2 == (a + b)**2
 
-resultado = "Se cumple" if binomio_al_cuadrado == esperado else "No se cumple"
+# Se asigna el valor booleano correspondiente a la variable
+resultado = "Se cumple" if esperado else "No se cumple"
 
+# Se imprime el resultado guardado en variable
 print(resultado)
 
 

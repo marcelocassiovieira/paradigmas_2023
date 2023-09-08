@@ -3,8 +3,10 @@
 ¿Y cómo obtendría los dos últimos dígitos? Desarrolle un programa que cargue un número entero por teclado,
 y muestre el último dígito del mismo (por un lado) y los dos últimos dígitos (por otro lado).
 """
+
+from src.utils.validar import validar_si_es_numerico
 # Se ingresa el numero
-numero = int(input("Ingrese el numero:"))
+numero = int(validar_si_es_numerico("Ingrese el numero:"))
 
 # Se obtiene la ultima unidad y la ultima decena del numero
 ultimo_digito = numero % 10

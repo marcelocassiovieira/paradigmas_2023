@@ -1,8 +1,10 @@
 # Ahorros. Escribir un programa en el cual muestre a fin de año el total de ahorro obtenido,
 # si se pide en cada mes el 10% del sueldo ganado.
 
+from src.utils.validar import validar_si_es_numerico
+
 # Se ingresa el valor a depositar
-ahorro = float(input("Ingrese cuanto queres ahorrar: "))
+ahorro = float(validar_si_es_numerico("Ingrese cuanto queres ahorrar: "))
 PORCENTAGE_INTERES_MENSUAL = 10
 
 # Se calcula el interes compuesto

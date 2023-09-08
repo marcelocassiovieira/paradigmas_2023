@@ -1,13 +1,18 @@
 # Crear un conversor de pies y pulgadas a centímetros.
 
+from src.utils.validar import validar_si_es_numerico
+from src.utils.validar import validar_opciones_correctas
+
 # Se solicita el tipo de conversion
 print("Seleccione una opción:")
 print("1. Convertir pies a centimetros")
 print("2. Convertir pulgadas a centimetros")
-opcion = int(input("Seleccione el numero de la opcion: "))
+opciones = [1, 2]
+
+opcion = int(validar_opciones_correctas("Ingrese el número de la opción deseada: ", opciones))
 
 # Se solicita la cantidad
-cantidad = int(input("Ingresa la cantidad: "))
+cantidad = int(validar_si_es_numerico("Ingresa la cantidad: "))
 
 # Declaro las constantes de equivalencia
 PIE_A_CENTIMETRO = 30.48

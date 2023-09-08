@@ -6,9 +6,13 @@ Si el usuario no marcó ninguno de los números, indicarlo diciendo “El jugado
 no marcó ninguna casilla”. Caso contrario mostrar “El jugador marcó algún número de la tarjeta”
 """
 import random
+from src.utils.validar import validar_si_es_numerico
 
 # Defino variables, constantes y arreglos
 TAMANO_TARJETA = 15
+MINIMO_TARJETA = 1
+MAXIMO_TARJETA = 100
+CANT_NUMEROS_JUGADOR = 3
 cant_aciertos = 0
 numeros_jugador = []
 tarjeta = []
@@ -16,7 +20,7 @@ tarjeta = []
 
 # Genero los numeros aleatorios, si no existe en la tarjeta se agrega
 while len(tarjeta) < TAMANO_TARJETA:
-    numero_aleatorio = random.randint(1, 15)
+    numero_aleatorio = random.randint(MINIMO_TARJETA, MAXIMO_TARJETA)
     if numero_aleatorio not in tarjeta:
         tarjeta.append(numero_aleatorio)
 
@@ -24,9 +28,13 @@ while len(tarjeta) < TAMANO_TARJETA:
 tarjeta.sort()
 
 # Se ingresa los numeros de los jugadores y se los agrega a la lista de numeros del jugador
-numeros_jugador.append(int(input("Ingrese el primer numero: ")))
-numeros_jugador.append(int(input("Ingrese el segundo numero: ")))
-numeros_jugador.append(int(input("Ingrese el tercer numero: ")))
+
+
+for num in range(CANT_NUMEROS_JUGADOR):
+    numeros_jugador.append(int(validar_si_es_numerico("Ingrese un numero: ")))
+
+# numeros_jugador.append(int(validar_si_es_numerico("Ingrese el segundo numero: ")))
+# numeros_jugador.append(int(validar_si_es_numerico("Ingrese el tercer numero: ")))
 
 # Se evalua cuantos numeros acerto el jugar
 for num in numeros_jugador:

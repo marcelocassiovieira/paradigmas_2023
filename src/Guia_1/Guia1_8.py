@@ -1,7 +1,8 @@
 # Ingresar la cantidad de números de la sucesión de Fibonacci a mostrar.
 
+from src.utils.validar import validar_si_es_numerico
 # Ingresa la cantidad
-cantidad = int(input("Ingrese la cantidad para la sucesion de fibonacci"))
+cantidad = int(validar_si_es_numerico("Ingrese la cantidad para la sucesion de fibonacci: "))
 
 # Se inicializa variables
 a = 0
@@ -19,6 +20,8 @@ while result <= cantidad:
     print(result)
     a = b
     b = result
+
+
 
 
 

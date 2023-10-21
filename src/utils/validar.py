@@ -22,8 +22,21 @@ def validar_opciones_correctas(texto, opciones):
         opcion = int(validar_si_es_numerico(texto))
         if opcion not in opciones:
             print("------------------------------------")
-            print("La opción es invalida...")
+            print("La opcion es invalida...")
         else:
             is_valid = True
             return opcion
 
+
+def es_numero(digito):
+    if digito.isnumeric():
+        return True
+    else:
+        return False
+
+
+def es_mayor_que_cero(numero):
+    if numero > 0:
+        return True
+    else:
+        return False
